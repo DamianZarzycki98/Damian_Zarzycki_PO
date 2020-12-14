@@ -7,43 +7,42 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.MainController">
    <children>
       <HBox prefHeight="45.0" prefWidth="1100.0">
          <children>
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Autor">
+            <Button mnemonicParsing="false" onAction="#autorTable" prefWidth="150.0" text="Autor">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Czytelnik">
+            <Button mnemonicParsing="false" onAction="#czytTable" prefWidth="150.0" text="Czytelnik">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Egzemplarz">
+            <Button mnemonicParsing="false" onAction="#egzTable" prefWidth="150.0" text="Egzemplarz">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Książka">
+            <Button mnemonicParsing="false" onAction="#ksTable" prefWidth="150.0" text="Książka">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Wydawnictwo">
+            <Button mnemonicParsing="false" onAction="#wydaTable" prefWidth="150.0" text="Wydawnictwo">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefWidth="150.0" text="Wypożyczenia">
+            <Button mnemonicParsing="false" onAction="#wypoTable" prefWidth="150.0" text="Wypożyczenia">
                <HBox.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <Pane layoutY="65.0" prefHeight="372.0" prefWidth="1100.0" />
+      <Pane fx:id="wyswietl" layoutY="65.0" prefHeight="372.0" prefWidth="1100.0" />
    </children>
 </AnchorPane>
