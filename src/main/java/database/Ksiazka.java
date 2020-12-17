@@ -17,16 +17,22 @@ public class Ksiazka {
     private String Id_Autora;
     @Column(name = "Id_Wydawnictwa")
     private String Id_Wydawnictwa;
+    @Column(name = "AImNa")
+    private String AImNa;
+    @Column(name = "Nazwa_Wydawnictwa")
+    private String Nazwa_Wydawnictwa;
 
     public Ksiazka() {
     }
 
-    public Ksiazka(int id_Ksiazki, String tytul, String rok_Wydania, String id_Autora, String id_Wydawnictwa) {
+    public Ksiazka(int id_Ksiazki, String tytul, String rok_Wydania, String id_Autora, String id_Wydawnictwa, String AImNa, String nazwa_Wydawnictwa) {
         Id_Ksiazki = id_Ksiazki;
         Tytul = tytul;
         Rok_Wydania = rok_Wydania;
         Id_Autora = id_Autora;
         Id_Wydawnictwa = id_Wydawnictwa;
+        this.AImNa = AImNa;
+        Nazwa_Wydawnictwa = nazwa_Wydawnictwa;
     }
 
     public int getId_Ksiazki() {
@@ -69,6 +75,22 @@ public class Ksiazka {
         Id_Wydawnictwa = id_Wydawnictwa;
     }
 
+    public String getAImNa() {
+        return AImNa;
+    }
+
+    public void setAImNa(String AImNa) {
+        this.AImNa = AImNa;
+    }
+
+    public String getNazwa_Wydawnictwa() {
+        return Nazwa_Wydawnictwa;
+    }
+
+    public void setNazwa_Wydawnictwa(String nazwa_Wydawnictwa) {
+        Nazwa_Wydawnictwa = nazwa_Wydawnictwa;
+    }
+
     @Override
     public String toString() {
         return "Ksiazka{" +
@@ -77,6 +99,8 @@ public class Ksiazka {
                 ", Rok_Wydania='" + Rok_Wydania + '\'' +
                 ", Id_Autora='" + Id_Autora + '\'' +
                 ", Id_Wydawnictwa='" + Id_Wydawnictwa + '\'' +
+                ", AImNa='" + AImNa + '\'' +
+                ", Nazwa_Wydawnictwa='" + Nazwa_Wydawnictwa + '\'' +
                 '}';
     }
 }
