@@ -29,7 +29,7 @@ public class AutorController implements Initializable {
     @FXML
     private TableColumn<Autor, String> autorNarodowosc;
 
-    private Connection con;
+    private Connection connection;
     private DbConnect dbConnect;
     private ObservableList<Autor> autorList;
 
@@ -47,11 +47,11 @@ public class AutorController implements Initializable {
         try {
             autorList = FXCollections.observableArrayList();
             String query = "SELECT * FROM autor";
-            con=dbConnect.getConnection();
-            ResultSet rs = con.createStatement().executeQuery(query);
+            connection=dbConnect.getConnection();
+            ResultSet rs = connection.createStatement().executeQuery(query);
             while (rs.next()){
                 Autor a = new Autor();
-                a.setId_Autora(rs.getInt("ID_Autora"));
+                a.setId_Autora(rs.getInt("Id_Autora"));
                 a.setImie(rs.getString("Imie"));
                 a.setNazwisko(rs.getString("Nazwisko"));
                 a.setRok_Urodzenia(rs.getString("Rok_Urodzenia"));
