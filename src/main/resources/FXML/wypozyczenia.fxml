@@ -6,9 +6,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="cfg.WypozyczeniaController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.WypozyczeniaController">
+   <children>
+      <TableView fx:id="wypozyczeniaTab" prefWidth="1200.0">
+        <columns>
+          <TableColumn fx:id="wypozyczeniaKsiazka" minWidth="600.0" prefWidth="75.0" text="Książka" />
+          <TableColumn fx:id="wypozyczeniaCzytelnik" minWidth="600.0" prefWidth="75.0" text="Imie i nazwisko czytelnika" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>
