@@ -17,19 +17,22 @@ public class Wypozyczenia {
     private String Id_Czytelnika;
     @Column(name = "CImNa")
     private String CImNa;
-    @Column(name = "Id_Egzemplarza")
-    private String Id_Egzemplarza;
+    @Column(name = "Data_Wypozyczenia")
+    private String Data_Wypozyczenia;
+    @Column(name = "Data_Oddania")
+    private String Data_Oddania;
 
     public Wypozyczenia() {
     }
 
-    public Wypozyczenia(int id_Wypozyczenia, String id_Ksiazki, String tytul, String id_Czytelnika, String CImNa, String id_Egzemplarza) {
+    public Wypozyczenia(int id_Wypozyczenia, String id_Ksiazki, String tytul, String id_Czytelnika, String CImNa, String data_Wypozyczenia, String data_Oddania) {
         Id_Wypozyczenia = id_Wypozyczenia;
         Id_Ksiazki = id_Ksiazki;
         Tytul = tytul;
         Id_Czytelnika = id_Czytelnika;
         this.CImNa = CImNa;
-        Id_Egzemplarza = id_Egzemplarza;
+        Data_Wypozyczenia = data_Wypozyczenia;
+        Data_Oddania = data_Oddania;
     }
 
     public int getId_Wypozyczenia() {
@@ -72,12 +75,20 @@ public class Wypozyczenia {
         this.CImNa = CImNa;
     }
 
-    public String getId_Egzemplarza() {
-        return Id_Egzemplarza;
+    public String getData_Wypozyczenia() {
+        return Data_Wypozyczenia;
     }
 
-    public void setId_Egzemplarza(String id_Egzemplarza) {
-        Id_Egzemplarza = id_Egzemplarza;
+    public void setData_Wypozyczenia(String data_Wypozyczenia) {
+        Data_Wypozyczenia = data_Wypozyczenia;
+    }
+
+    public String getData_Oddania() {
+        return Data_Oddania;
+    }
+
+    public void setData_Oddania(String data_Oddania) {
+        Data_Oddania = data_Oddania;
     }
 
     @Override
@@ -88,7 +99,8 @@ public class Wypozyczenia {
                 ", Tytul='" + Tytul + '\'' +
                 ", Id_Czytelnika='" + Id_Czytelnika + '\'' +
                 ", CImNa='" + CImNa + '\'' +
-                ", Id_Egzemplarza='" + Id_Egzemplarza + '\'' +
+                ", Data_Wypozyczenia='" + Data_Wypozyczenia + '\'' +
+                ", Data_Oddania='" + Data_Oddania + '\'' +
                 '}';
     }
 }

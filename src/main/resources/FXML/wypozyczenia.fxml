@@ -10,8 +10,10 @@
    <children>
       <TableView fx:id="wypozyczeniaTab" prefWidth="1200.0">
         <columns>
-          <TableColumn fx:id="wypozyczeniaKsiazka" minWidth="600.0" prefWidth="75.0" text="Książka" />
-          <TableColumn fx:id="wypozyczeniaCzytelnik" minWidth="600.0" prefWidth="75.0" text="Imie i nazwisko czytelnika" />
+          <TableColumn fx:id="wypozyczeniaKsiazka" minWidth="300.0" prefWidth="75.0" text="Książka" />
+          <TableColumn fx:id="wypozyczeniaCzytelnik" minWidth="300.0" prefWidth="75.0" text="Imie i nazwisko czytelnika" />
+            <TableColumn fx:id="wypozyczeniaDataWyp" minWidth="300.0" prefWidth="75.0" text="Data wypozyczenia" />
+            <TableColumn fx:id="wypozyczeniaDataOdd" minWidth="300.0" prefWidth="75.0" text="Data oddania" />
         </columns>
       </TableView>
    </children>

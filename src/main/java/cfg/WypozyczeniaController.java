@@ -23,6 +23,10 @@ public class WypozyczeniaController implements Initializable {
     private TableColumn<Wypozyczenia, String> wypozyczeniaKsiazka;
     @FXML
     private TableColumn<Wypozyczenia, String> wypozyczeniaCzytelnik;
+    @FXML
+    private TableColumn<Wypozyczenia, String> wypozyczeniaDataWyp;
+    @FXML
+    private TableColumn<Wypozyczenia, String> wypozyczeniaDataOdd;
 
     private Connection connection;
     private DbConnect dbConnect;
@@ -41,7 +45,7 @@ public class WypozyczeniaController implements Initializable {
     private void wypozyczeniaTableView() {
         try {
             wypozyczeniaList = FXCollections.observableArrayList();
-            String query = "SELECT *, CONCAT(czytelnik.Imie,' ',czytelnik.Nazwisko) AS cimna FROM wypozyczenia INNER JOIN egzemplarz ON wypozyczenia.Id_Egzemplarza=egzemplarz.Id_Egzemplarza INNER JOIN czytelnik ON wypozyczenia.Id_Czytelnika=czytelnik.Id_Czytelnika INNER JOIN ksiazka ON egzemplarz.Id_Ksiazki=ksiazka.Id_Ksiazki";
+            String query = "SELECT *, CONCAT(czytelnik.Imie,' ',czytelnik.Nazwisko) AS cimna FROM wypozyczenia INNER JOIN czytelnik ON wypozyczenia.Id_Czytelnika=czytelnik.Id_Czytelnika INNER JOIN ksiazka ON wypozyczenia.Id_Ksiazki=ksiazka.Id_Ksiazki";
             connection=dbConnect.getConnection();
             ResultSet rs = connection.createStatement().executeQuery(query);
             while (rs.next()){
@@ -49,16 +53,17 @@ public class WypozyczeniaController implements Initializable {
                 wyp.setId_Wypozyczenia(rs.getInt("Id_Wypozyczenia"));
                 wyp.setId_Ksiazki(rs.getString("Id_Ksiazki"));
                 wyp.setTytul(rs.getString("ksiazka.Tytul"));
-                wyp.setId_Egzemplarza(rs.getString("Id_Egzemplarza"));
                 wyp.setId_Czytelnika(rs.getString("Id_Czytelnika"));
                 wyp.setCImNa(rs.getString("cimna"));
+                wyp.setData_Wypozyczenia(rs.getString("Data_Wypozyczenia"));
+                wyp.setData_Oddania(rs.getString("Data_Oddania"));
                 wypozyczeniaList.add(wyp);
-
-                System.out.println(wypozyczeniaList);
             }
 
             wypozyczeniaKsiazka.setCellValueFactory(new PropertyValueFactory<>("Tytul"));
             wypozyczeniaCzytelnik.setCellValueFactory(new PropertyValueFactory<>("CImNa"));
+            wypozyczeniaDataWyp.setCellValueFactory(new PropertyValueFactory<>("Data_Wypozyczenia"));
+            wypozyczeniaDataOdd.setCellValueFactory(new PropertyValueFactory<>("Data_Oddania"));
 
             wypozyczeniaTab.setItems(wypozyczeniaList);
 
