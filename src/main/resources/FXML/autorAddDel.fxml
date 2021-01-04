@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.AutorAddDel">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Dodaj">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="autorAddImie" layoutX="41.0" layoutY="37.0" />
+                        <TextField fx:id="autorAddNazwisko" layoutX="41.0" layoutY="81.0" />
+                        <TextField fx:id="autorAddRok" layoutX="41.0" layoutY="125.0" />
+                        <TextField fx:id="autorAddNarodowosc" layoutX="41.0" layoutY="173.0" />
+                        <Button layoutX="41.0" layoutY="214.0" mnemonicParsing="false" onAction="#autorAdd" text="Dodaj" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Usuń">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="autorSelect" layoutX="39.0" layoutY="50.0" prefWidth="150.0" />
+                        <Button layoutX="39.0" layoutY="97.0" mnemonicParsing="false" onAction="#autorDel" text="Usuń" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TabPane>
+   </children>
+</AnchorPane>
