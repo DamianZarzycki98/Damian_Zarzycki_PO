@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="cfg.KsiazkaAddDel"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.KsiazkaAddDel">
+   <children>
+      <TabPane prefHeight="450.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Dodawanie">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="ksiazkaAddTytul" layoutX="51.0" layoutY="43.0" />
+                        <TextField fx:id="ksiazkaAddRok" layoutX="51.0" layoutY="106.0" />
+                        <ComboBox fx:id="ksiazkaSelectAutor" layoutX="51.0" layoutY="170.0" prefWidth="150.0" />
+                        <ComboBox fx:id="ksiazkaSelectWydawnictwo" layoutX="51.0" layoutY="236.0" prefWidth="150.0" />
+                        <Text layoutX="51.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
+                        <Text layoutX="53.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania" />
+                        <Text layoutX="53.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" />
+                        <Text layoutX="53.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wydawnictwo" />
+                        <Button layoutX="51.0" layoutY="289.0" mnemonicParsing="false" onAction="#ksiazkaAdd" text="Dodaj" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Usuwanie">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="ksiazkaSelect" layoutX="50.0" layoutY="61.0" prefWidth="150.0" />
+                        <Text layoutX="50.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz książkę do usunięcia" />
+                        <Button layoutX="50.0" layoutY="108.0" mnemonicParsing="false" onAction="#ksiazkaDel" text="Usuń" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>
