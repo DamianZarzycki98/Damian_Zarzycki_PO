@@ -33,7 +33,7 @@ public class AddDelController {
     }
 
     public void wydawnictwoAddDel(ActionEvent actionEvent) throws IOException{
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/awydawnictwoAddDel.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/wydawnictwoAddDel.fxml"));
         pane.getChildren().setAll(anchorPane);
     }
 
