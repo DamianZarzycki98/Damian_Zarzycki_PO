@@ -75,7 +75,6 @@ public class AutorAddDel implements Initializable {
         int id = (int) listDelAutor.get(autorSelect.getSelectionModel().getSelectedIndex());
         DbConnect dbConnect = new DbConnect();
         connection = dbConnect.getConnection();
-        System.out.println(id);
         String query = "DELETE FROM autor WHERE Id_Autora="+id;
         int ex = connection.createStatement().executeUpdate(query);
         if(ex>0){

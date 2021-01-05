@@ -16,11 +16,15 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="autorAddImie" layoutX="41.0" layoutY="37.0" />
-                        <TextField fx:id="autorAddNazwisko" layoutX="41.0" layoutY="81.0" />
-                        <TextField fx:id="autorAddRok" layoutX="41.0" layoutY="125.0" />
-                        <TextField fx:id="autorAddNarodowosc" layoutX="41.0" layoutY="173.0" />
-                        <Button layoutX="41.0" layoutY="214.0" mnemonicParsing="false" onAction="#autorAdd" text="Dodaj" />
+                        <TextField fx:id="autorAddImie" layoutX="41.0" layoutY="50.0" />
+                        <TextField fx:id="autorAddNazwisko" layoutX="41.0" layoutY="105.0" />
+                        <TextField fx:id="autorAddRok" layoutX="41.0" layoutY="161.0" />
+                        <TextField fx:id="autorAddNarodowosc" layoutX="41.0" layoutY="213.0" />
+                        <Button layoutX="42.0" layoutY="267.0" mnemonicParsing="false" onAction="#autorAdd" text="Dodaj" />
+                        <Text layoutX="42.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />
+                        <Text layoutX="41.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
+                        <Text layoutX="42.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rok urodzenia" />
+                        <Text layoutX="41.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Narodowość" />
                      </children>
                   </AnchorPane>
             </content>
@@ -31,6 +35,7 @@
                      <children>
                         <ComboBox fx:id="autorSelect" layoutX="39.0" layoutY="50.0" prefWidth="150.0" />
                         <Button layoutX="39.0" layoutY="97.0" mnemonicParsing="false" onAction="#autorDel" text="Usuń" />
+                        <Text layoutX="39.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz autora do usunięcia" />
                      </children></AnchorPane>
             </content>
           </Tab>
