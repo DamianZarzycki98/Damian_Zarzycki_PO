@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="cfg.WypozyczeniaAddDel"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.WypozyczeniaAddDel">
+   <children>
+      <TabPane prefHeight="450.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Dodawanie">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="wypozyczeniaSelectKsiazka" layoutX="50.0" layoutY="50.0" prefWidth="150.0" />
+                        <ComboBox fx:id="wypozyczeniaSelectCzytelnik" layoutX="50.0" layoutY="125.0" prefWidth="150.0" />
+                        <DatePicker fx:id="wypozyczeniaSelectDataOdd" layoutX="47.0" layoutY="194.0" />
+                        <Button layoutX="47.0" layoutY="242.0" mnemonicParsing="false" onAction="#wypozyczeniaAdd" text="Dodaj" />
+                        <Text layoutX="50.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz książkę" />
+                        <Text layoutX="50.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz czytelnika" />
+                        <Text layoutX="50.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data oddania" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Usuwanie">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="wypozyczeniaSelect" layoutX="50.0" layoutY="49.0" prefWidth="150.0" />
+                        <Text layoutX="50.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz wypozyczenie do usunięcia" />
+                        <Button layoutX="50.0" layoutY="101.0" mnemonicParsing="false" onAction="#wypozyczeniaDel" text="Usuń" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
 </AnchorPane>
