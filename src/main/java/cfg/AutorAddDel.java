@@ -36,8 +36,11 @@ public class AutorAddDel implements Initializable {
     public void autorAdd(ActionEvent actionEvent) throws SQLException {
         DbConnect dbConnect = new DbConnect();
         connection = dbConnect.getConnection();
-        String query = "INSERT INTO autor(Imie, Nazwisko, Rok_Urodzenia, Narodowosc) VALUES('"+autorAddImie.getText()+"','"
-                +autorAddNazwisko.getText()+"','"+autorAddRok.getText()+"','"+autorAddNarodowosc.getText()+"')";
+        String query = "INSERT INTO autor(Imie, Nazwisko, Rok_Urodzenia, Narodowosc) VALUES('"
+                +autorAddImie.getText()+"','"
+                +autorAddNazwisko.getText()+"','"
+                +autorAddRok.getText()+"','"
+                +autorAddNarodowosc.getText()+"')";
         int ex = connection.createStatement().executeUpdate(query);
 
         if (ex>0){
