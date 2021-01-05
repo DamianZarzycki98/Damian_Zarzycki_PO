@@ -11,18 +11,18 @@ public class Egzemplarz {
     private int Id_Egzemplarza;
     @Column(name = "Id_Ksiazki")
     private String Id_Ksiazki;
-    @Column(name = "ISBN")
-    private String ISBN;
+    @Column(name = "Ilosc_Ksiazek")
+    private String Ilosc_Ksiazek;
     @Column(name = "Tytul")
     private String Tytul;
 
     public Egzemplarz() {
     }
 
-    public Egzemplarz(int id_Egzemplarza, String id_Ksiazki, String ISBN, String tytul) {
+    public Egzemplarz(int id_Egzemplarza, String id_Ksiazki, String Ilosc_Ksiazek, String tytul) {
         Id_Egzemplarza = id_Egzemplarza;
         Id_Ksiazki = id_Ksiazki;
-        this.ISBN = ISBN;
+        this.Ilosc_Ksiazek = Ilosc_Ksiazek;
         Tytul = tytul;
     }
 
@@ -42,12 +42,12 @@ public class Egzemplarz {
         Id_Ksiazki = id_Ksiazki;
     }
 
-    public String getISBN() {
-        return ISBN;
+    public String getIlosc_Ksiazek() {
+        return Ilosc_Ksiazek;
     }
 
-    public void setISBN(String ISBN) {
-        this.ISBN = ISBN;
+    public void setIlosc_Ksiazek(String Ilosc_Ksiazek) {
+        this.Ilosc_Ksiazek = Ilosc_Ksiazek;
     }
 
     public String getTytul() {
@@ -63,7 +63,7 @@ public class Egzemplarz {
         return "Egzemplarz{" +
                 "Id_Egzemplarza=" + Id_Egzemplarza +
                 ", Id_Ksiazki='" + Id_Ksiazki + '\'' +
-                ", ISBN='" + ISBN + '\'' +
+                ", Ilosc_Ksiazek='" + Ilosc_Ksiazek + '\'' +
                 ", Tytul='" + Tytul + '\'' +
                 '}';
     }

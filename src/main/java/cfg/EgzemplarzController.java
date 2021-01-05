@@ -49,13 +49,13 @@ public class EgzemplarzController implements Initializable {
                 Egzemplarz e = new Egzemplarz();
                 e.setId_Egzemplarza(rs.getInt("Id_Egzemplarza"));
                 e.setId_Ksiazki(rs.getString("Id_Ksiazki"));
-                e.setISBN(rs.getString("ISBN"));
+                e.setIlosc_Ksiazek(rs.getString("Ilosc_Ksiazek"));
                 e.setTytul(rs.getString("Tytul"));
                 egzemplarzList.add(e);
             }
 
             egzemplarzTytyl.setCellValueFactory(new PropertyValueFactory<>("Tytul"));
-            egzemplarzISBN.setCellValueFactory(new PropertyValueFactory<>("ISBN"));
+            egzemplarzISBN.setCellValueFactory(new PropertyValueFactory<>("Ilosc_Ksiazek"));
 
             egzemplarzTab.setItems(egzemplarzList);
 
