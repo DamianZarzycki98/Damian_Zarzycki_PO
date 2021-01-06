@@ -5,6 +5,7 @@ import database.Egzemplarz;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,13 +24,21 @@ public class EgzemplarzAddDel implements Initializable {
     @FXML
     private TextField egzemplarzAddIlosc;
 
+    @FXML
+    private ComboBox egzemplarzDelSelect;
+    @FXML
+    private TextField egzemplarzDelIlosc;
+
     private Connection connection;
     ArrayList listSelectKsiazka = new ArrayList();
+    ArrayList listDelSelect = new ArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         egzemplarzSelectKsiazka();
+        egzemplarzDelSelect();
     }
+
 
     private void egzemplarzSelectKsiazka() {
         try {
@@ -73,5 +82,54 @@ public class EgzemplarzAddDel implements Initializable {
         }
     }
 
+    private void egzemplarzDelSelect() {
+        try {
+            DbConnect dbConnect = new DbConnect();
+            connection = dbConnect.getConnection();
+            String query = "SELECT *,CONCAT(Tytul,', ilosc:',Ilosc_Ksiazek)as TyIl FROM ksiazka INNER JOIN egzemplarz ON " +
+                    "ksiazka.Id_Ksiazki=egzemplarz.Id_Ksiazki";
+            ResultSet rs = connection.createStatement().executeQuery(query);
+            while (rs.next()) {
+                egzemplarzDelSelect.getItems().add(rs.getString("TyIl"));
+                listDelSelect.add(rs.getInt("Id_Ksiazki"));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 
+    public void egzemplarzDel(ActionEvent actionEvent) throws SQLException{
+        DbConnect dbConnect = new DbConnect();
+        connection = dbConnect.getConnection();
+        int idKsiazki = (int) listDelSelect.get(egzemplarzDelSelect.getSelectionModel().getSelectedIndex());
+        String query = "SELECT * FROM egzemplarz WHERE Id_Ksiazki="+idKsiazki;
+        ResultSet rs = connection.createStatement().executeQuery(query);
+        int i=0;
+        int ilosc3 = 0;
+        while (rs.next()) {
+            i++;
+            ilosc3 = Integer.parseInt(rs.getString("Ilosc_Ksiazek"));
+        }
+        if(i>0){
+            String ilosc = egzemplarzDelIlosc.getText();
+            int ilosc2 = Integer.parseInt(ilosc);
+            if(ilosc2 <= ilosc3) {
+                String query2 = "UPDATE egzemplarz SET Ilosc_Ksiazek = Ilosc_Ksiazek -" + ilosc + " Where Id_Ksiazki=" + idKsiazki;
+                connection.createStatement().executeUpdate(query2);
+                listSelectKsiazka.clear();
+                egzemplarzAddIlosc.clear();
+                egzemplarzSelectKsiazka.getItems().clear();
+                egzemplarzSelectKsiazka();
+                listDelSelect.clear();
+                egzemplarzDelIlosc.clear();
+                egzemplarzDelSelect.getItems().clear();
+                egzemplarzDelSelect();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Błąd!");
+                alert.setHeaderText("Ilość książek do usunięcia nie może być większa niż ilość posiadanych)");
+                alert.showAndWait();
+            }
+        }
+    }
 }

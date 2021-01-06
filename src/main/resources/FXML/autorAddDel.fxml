@@ -12,7 +12,7 @@
    <children>
       <TabPane prefHeight="400.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Dodaj">
+          <Tab text="Dodawanie">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -29,7 +29,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Usuń">
+          <Tab text="Usuwanie">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>

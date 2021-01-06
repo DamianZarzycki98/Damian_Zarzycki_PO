@@ -9,7 +9,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.KsiazkaAddDel">
    <children>
-      <TabPane prefHeight="450.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="400.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Dodawanie">
             <content>
