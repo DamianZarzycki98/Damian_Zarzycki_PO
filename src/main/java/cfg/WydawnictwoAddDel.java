@@ -4,6 +4,7 @@ import connect.DbConnect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -70,16 +71,23 @@ public class WydawnictwoAddDel implements Initializable {
         }
     }
 
-    public void wydawnictwoDel(ActionEvent actionEvent) throws SQLException{
-        int id = (int) listDelWydawnictwo.get(wydawnictwoSelect.getSelectionModel().getSelectedIndex());
-        DbConnect dbConnect = new DbConnect();
-        connection = dbConnect.getConnection();
-        String query = "DELETE FROM wydawnictwo WHERE Id_Wydawnictwa="+id;
-        int ex = connection.createStatement().executeUpdate(query);
-        if(ex>0){
-            listDelWydawnictwo.clear();
-            wydawnictwoSelect.getItems().clear();
-            wydawnictwoSelect();
+    public void wydawnictwoDel(ActionEvent actionEvent) {
+        try {
+            int id = (int) listDelWydawnictwo.get(wydawnictwoSelect.getSelectionModel().getSelectedIndex());
+            DbConnect dbConnect = new DbConnect();
+            connection = dbConnect.getConnection();
+            String query = "DELETE FROM wydawnictwo WHERE Id_Wydawnictwa=" + id;
+            int ex = connection.createStatement().executeUpdate(query);
+            if (ex > 0) {
+                listDelWydawnictwo.clear();
+                wydawnictwoSelect.getItems().clear();
+                wydawnictwoSelect();
+            }
+        }catch (SQLException throwables) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd!");
+            alert.setHeaderText("Musisz najpierw usnąć książkę danego wydawnictwa!");
+            alert.showAndWait();
         }
     }
 }

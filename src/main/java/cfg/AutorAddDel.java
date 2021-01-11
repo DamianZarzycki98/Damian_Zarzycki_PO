@@ -4,6 +4,7 @@ import connect.DbConnect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -74,16 +75,23 @@ public class AutorAddDel implements Initializable {
         }
     }
 
-    public void autorDel(ActionEvent actionEvent) throws SQLException {
-        int id = (int) listDelAutor.get(autorSelect.getSelectionModel().getSelectedIndex());
-        DbConnect dbConnect = new DbConnect();
-        connection = dbConnect.getConnection();
-        String query = "DELETE FROM autor WHERE Id_Autora="+id;
-        int ex = connection.createStatement().executeUpdate(query);
-        if(ex>0){
-            listDelAutor.clear();
-            autorSelect.getItems().clear();
-            autorSelect();
+    public void autorDel(ActionEvent actionEvent) {
+        try {
+            int id = (int) listDelAutor.get(autorSelect.getSelectionModel().getSelectedIndex());
+            DbConnect dbConnect = new DbConnect();
+            connection = dbConnect.getConnection();
+            String query = "DELETE FROM autor WHERE Id_Autora=" + id;
+            int ex = connection.createStatement().executeUpdate(query);
+            if (ex > 0) {
+                listDelAutor.clear();
+                autorSelect.getItems().clear();
+                autorSelect();
+            }
+        }catch (SQLException throwables) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd!");
+            alert.setHeaderText("Musisz najpierw usnąć książkę danego autora!");
+            alert.showAndWait();
         }
     }
 

@@ -4,6 +4,7 @@ import connect.DbConnect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -113,16 +114,23 @@ public class KsiazkaAddDel implements Initializable {
         }
     }
 
-    public void ksiazkaDel(ActionEvent actionEvent) throws SQLException{
-        int id = (int) listDelKsiazka.get(ksiazkaSelect.getSelectionModel().getSelectedIndex());
-        DbConnect dbConnect = new DbConnect();
-        connection = dbConnect.getConnection();
-        String query = "DELETE FROM ksiazka WHERE Id_Ksiazki="+id;
-        int ex = connection.createStatement().executeUpdate(query);
-        if(ex>0){
-            listDelKsiazka.clear();
-            ksiazkaSelect.getItems().clear();
-            ksiazkaSelect();
+    public void ksiazkaDel(ActionEvent actionEvent) {
+        try {
+            int id = (int) listDelKsiazka.get(ksiazkaSelect.getSelectionModel().getSelectedIndex());
+            DbConnect dbConnect = new DbConnect();
+            connection = dbConnect.getConnection();
+            String query = "DELETE FROM ksiazka WHERE Id_Ksiazki=" + id;
+            int ex = connection.createStatement().executeUpdate(query);
+            if (ex > 0) {
+                listDelKsiazka.clear();
+                ksiazkaSelect.getItems().clear();
+                ksiazkaSelect();
+            }
+        }catch (SQLException throwables) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd!");
+            alert.setHeaderText("Musisz najpierw usnąć wypożyczenie z daną książką!");
+            alert.showAndWait();
         }
     }
 }

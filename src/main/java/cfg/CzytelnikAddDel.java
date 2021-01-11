@@ -4,6 +4,7 @@ import connect.DbConnect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -71,16 +72,23 @@ public class CzytelnikAddDel implements Initializable {
         }
     }
 
-    public void czytelnikDel(ActionEvent actionEvent) throws SQLException{
-        int id = (int) listDelCzytelnik.get(czytelnikSelect.getSelectionModel().getSelectedIndex());
-        DbConnect dbConnect = new DbConnect();
-        connection = dbConnect.getConnection();
-        String query = "DELETE FROM czytelnik WHERE Id_Czytelnika="+id;
-        int ex = connection.createStatement().executeUpdate(query);
-        if(ex>0){
-            listDelCzytelnik.clear();
-            czytelnikSelect.getItems().clear();
-            czytelnikSelect();
+    public void czytelnikDel(ActionEvent actionEvent) {
+        try {
+            int id = (int) listDelCzytelnik.get(czytelnikSelect.getSelectionModel().getSelectedIndex());
+            DbConnect dbConnect = new DbConnect();
+            connection = dbConnect.getConnection();
+            String query = "DELETE FROM czytelnik WHERE Id_Czytelnika=" + id;
+            int ex = connection.createStatement().executeUpdate(query);
+            if (ex > 0) {
+                listDelCzytelnik.clear();
+                czytelnikSelect.getItems().clear();
+                czytelnikSelect();
+            }
+        }catch (SQLException throwables) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Błąd!");
+            alert.setHeaderText("Musisz najpierw usnąć wypożyczenie z danym czytelnikiem!");
+            alert.showAndWait();
         }
     }
 
