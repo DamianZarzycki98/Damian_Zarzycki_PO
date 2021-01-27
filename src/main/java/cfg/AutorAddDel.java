@@ -35,6 +35,7 @@ public class AutorAddDel implements Initializable {
 
 
     public void autorAdd(ActionEvent actionEvent) throws SQLException {
+
         DbConnect dbConnect = new DbConnect();
         connection = dbConnect.getConnection();
         String query = "INSERT INTO autor(Imie, Nazwisko, Rok_Urodzenia, Narodowosc) VALUES('"
@@ -58,6 +59,7 @@ public class AutorAddDel implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         autorSelect();
+        autorAddImie.setText("Test");
     }
 
     public void autorSelect() {

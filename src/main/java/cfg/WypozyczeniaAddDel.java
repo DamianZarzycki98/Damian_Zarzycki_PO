@@ -62,7 +62,7 @@ public class WypozyczeniaAddDel implements Initializable {
         try {
             DbConnect dbConnect = new DbConnect();
             connection = dbConnect.getConnection();
-            String query = "SELECT *,CONCAT(Imie,' ',Nazwisko)as ImNa FROM czytelnik";
+            String query = "SELECT *,CONCAT(Imie,' ',Nazwisko,', numer telefonu: ',Nr_Telefonu,', miejscowość: ',Miejscowosc)as ImNa FROM czytelnik";
             ResultSet rs = connection.createStatement().executeQuery(query);
             while (rs.next()) {
                 wypozyczeniaSelectCzytelnik.getItems().add(rs.getString("ImNa"));

@@ -54,4 +54,14 @@ public class MainController {
         stage.setTitle("Dodawanie i usuwanie danych z bazy danych");
         stage.show();
     }
+
+    public void edit(ActionEvent actionEvent) {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/FXML/mainEdit.fxml"));
+        //AnchorPane anchorPane = fxmlLoader.load();
+        //Scene scene = new Scene(anchorPane);
+//        stage.setScene(scene);
+//        stage.setTitle("Dodawanie i usuwanie danych z bazy danych");
+//        stage.show();
+    }
 }

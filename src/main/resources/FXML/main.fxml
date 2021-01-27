@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.MainController">
+<AnchorPane prefHeight="510.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.MainController">
     <children>
         <HBox prefHeight="45.0" prefWidth="1200.0">
             <children>
@@ -41,13 +41,22 @@
                         <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
                     </HBox.margin>
                 </Button>
-            <Button mnemonicParsing="false" onAction="#adddel" prefWidth="150.0" text="Dodaj/Usuń">
-               <HBox.margin>
-                  <Insets bottom="20.0" left="25.0" right="25.0" top="20.0" />
-               </HBox.margin>
-            </Button>
             </children>
         </HBox>
-        <Pane fx:id="wyswietl" layoutY="65.0" prefHeight="372.0" prefWidth="1100.0" />
+      <HBox layoutY="65.0" prefHeight="45.0" prefWidth="1200.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#adddel" prefWidth="150.0" text="Dodaj/Usuń">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="425.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#edit" prefWidth="150.0" text="Edycja">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="50.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+        <Pane fx:id="wyswietl" layoutY="110.0" prefHeight="305.0" prefWidth="1200.0" />
     </children>
 </AnchorPane>

@@ -61,7 +61,7 @@ public class CzytelnikAddDel implements Initializable {
         try {
             DbConnect dbConnect = new DbConnect();
             connection = dbConnect.getConnection();
-            String query = "SELECT *, CONCAT(Imie,' ',Nazwisko)as ImNa from czytelnik";
+            String query = "SELECT *, CONCAT(Imie,' ',Nazwisko,', numer telefonu: ',Nr_Telefonu,', miejscowość: ',Miejscowosc)as ImNa from czytelnik";
             ResultSet rs = connection.createStatement().executeQuery(query);
             while (rs.next()){
                 czytelnikSelect.getItems().add(rs.getString("ImNa"));

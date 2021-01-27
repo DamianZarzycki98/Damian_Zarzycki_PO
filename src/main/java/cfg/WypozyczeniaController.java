@@ -45,7 +45,7 @@ public class WypozyczeniaController implements Initializable {
     private void wypozyczeniaTableView() {
         try {
             wypozyczeniaList = FXCollections.observableArrayList();
-            String query = "SELECT *, CONCAT(czytelnik.Imie,' ',czytelnik.Nazwisko) AS cimna FROM wypozyczenia INNER JOIN czytelnik ON wypozyczenia.Id_Czytelnika=czytelnik.Id_Czytelnika INNER JOIN ksiazka ON wypozyczenia.Id_Ksiazki=ksiazka.Id_Ksiazki";
+            String query = "SELECT *, CONCAT(czytelnik.Imie,' ',czytelnik.Nazwisko) AS cimna FROM wypozyczenia INNER JOIN czytelnik ON wypozyczenia.Id_Czytelnika=czytelnik.Id_Czytelnika INNER JOIN ksiazka ON wypozyczenia.Id_Ksiazki=ksiazka.Id_Ksiazki ORDER BY Data_Wypozyczenia DESC";
             connection=dbConnect.getConnection();
             ResultSet rs = connection.createStatement().executeQuery(query);
             while (rs.next()){
