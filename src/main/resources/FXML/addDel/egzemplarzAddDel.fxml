@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.addDel.EgzemplarzAddDel">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Dodawanie">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="egzemplarzSelectKsiazka" layoutX="50.0" layoutY="47.0" prefWidth="150.0" />
+                        <Text layoutX="50.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz książkę" />
+                        <TextField fx:id="egzemplarzAddIlosc" layoutX="51.0" layoutY="107.0" />
+                        <Text layoutX="51.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Podaj ilość książek do dodania" />
+                        <Button layoutX="50.0" layoutY="150.0" mnemonicParsing="false" onAction="#egzemplarzAdd" text="Dodaj" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Usuwanie">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="egzemplarzDelSelect" layoutX="50.0" layoutY="55.0" prefWidth="150.0" />
+                        <Text layoutX="50.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz książkę" />
+                        <TextField fx:id="egzemplarzDelIlosc" layoutX="51.0" layoutY="121.0" />
+                        <Text layoutX="51.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Podaj ilość książek do usunięcia" />
+                        <Button layoutX="51.0" layoutY="175.0" mnemonicParsing="false" onAction="#egzemplarzDel" text="Usuń" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

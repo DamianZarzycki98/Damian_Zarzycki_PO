@@ -13,32 +13,32 @@ public class AddDelController {
     private Pane pane;
 
     public void autorAddDel(ActionEvent actionEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/autorAddDel.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/addDel/autorAddDel.fxml"));
         pane.getChildren().setAll(anchorPane);
     }
 
     public void czytelnikAddDel(ActionEvent actionEvent) throws IOException{
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/czytelnikAddDel.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/addDel/czytelnikAddDel.fxml"));
         pane.getChildren().setAll(anchorPane);
     }
 
     public void egzemplarzAddDel(ActionEvent actionEvent) throws IOException{
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/egzemplarzAddDel.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/addDel/egzemplarzAddDel.fxml"));
         pane.getChildren().setAll(anchorPane);
     }
 
     public void ksiazkaAddDel(ActionEvent actionEvent) throws IOException{
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/ksiazkaAddDel.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/addDel/ksiazkaAddDel.fxml"));
         pane.getChildren().setAll(anchorPane);
     }
 
     public void wydawnictwoAddDel(ActionEvent actionEvent) throws IOException{
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/wydawnictwoAddDel.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/addDel/wydawnictwoAddDel.fxml"));
         pane.getChildren().setAll(anchorPane);
     }
 
     public void wypozyczeniaAddDel(ActionEvent actionEvent) throws IOException{
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/wypozyczeniaAddDel.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/addDel/wypozyczeniaAddDel.fxml"));
         pane.getChildren().setAll(anchorPane);
     }
 }

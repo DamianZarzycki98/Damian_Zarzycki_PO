@@ -15,32 +15,32 @@ public class MainController {
     private Pane wyswietl;
 
     public void autorTable(javafx.event.ActionEvent actionEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/autor.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/view/autor.fxml"));
         wyswietl.getChildren().setAll(anchorPane);
     }
 
     public void czytTable(javafx.event.ActionEvent actionEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/czytelnik.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/view/czytelnik.fxml"));
         wyswietl.getChildren().setAll(anchorPane);
     }
 
     public void egzTable(javafx.event.ActionEvent actionEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/egzemplarz.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/view/egzemplarz.fxml"));
         wyswietl.getChildren().setAll(anchorPane);
     }
 
     public void ksTable(javafx.event.ActionEvent actionEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/ksiazka.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/view/ksiazka.fxml"));
         wyswietl.getChildren().setAll(anchorPane);
     }
 
     public void wydaTable(javafx.event.ActionEvent actionEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/wydawnictwo.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/view/wydawnictwo.fxml"));
         wyswietl.getChildren().setAll(anchorPane);
     }
 
     public void wypoTable(javafx.event.ActionEvent actionEvent) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/wypozyczenia.fxml"));
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/view/wypozyczenia.fxml"));
         wyswietl.getChildren().setAll(anchorPane);
     }
 
@@ -55,13 +55,13 @@ public class MainController {
         stage.show();
     }
 
-    public void edit(ActionEvent actionEvent) {
+    public void edit(ActionEvent actionEvent) throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource("/FXML/mainEdit.fxml"));
-        //AnchorPane anchorPane = fxmlLoader.load();
-        //Scene scene = new Scene(anchorPane);
-//        stage.setScene(scene);
-//        stage.setTitle("Dodawanie i usuwanie danych z bazy danych");
-//        stage.show();
+        AnchorPane anchorPane = fxmlLoader.load();
+        Scene scene = new Scene(anchorPane);
+        stage.setScene(scene);
+        stage.setTitle("Edycja danych z bazy danych");
+        stage.show();
     }
 }

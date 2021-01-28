@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.view.WypozyczeniaController">
+   <children>
+      <TableView fx:id="wypozyczeniaTab" prefWidth="1200.0">
+        <columns>
+          <TableColumn fx:id="wypozyczeniaKsiazka" minWidth="300.0" prefWidth="75.0" text="Książka" />
+          <TableColumn fx:id="wypozyczeniaCzytelnik" minWidth="300.0" prefWidth="75.0" text="Imie i nazwisko czytelnika" />
+            <TableColumn fx:id="wypozyczeniaDataWyp" minWidth="300.0" prefWidth="75.0" text="Data wypozyczenia" />
+            <TableColumn fx:id="wypozyczeniaDataOdd" minWidth="300.0" prefWidth="75.0" text="Data oddania" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.CzytelnikEdit">
+   <children>
+  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
+         <children>
+            <TextField fx:id="czytelnikEditImie" layoutX="51.0" layoutY="49.0" />
+            <Text layoutX="51.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />
+            <Text layoutX="51.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
+            <TextField fx:id="czytelnikEditNazwisko" layoutX="51.0" layoutY="112.0" />
+            <Text layoutX="51.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miejscowość" />
+            <TextField fx:id="czytelnikEditMiejscowosc" layoutX="51.0" layoutY="172.0" />
+            <Text layoutX="51.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer telefonu" />
+            <TextField fx:id="czytelnikEditNr" layoutX="51.0" layoutY="228.0" />
+            <Button layoutX="50.0" layoutY="272.0" mnemonicParsing="false" onAction="#czytelnikEdit" text="Edytuj" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
