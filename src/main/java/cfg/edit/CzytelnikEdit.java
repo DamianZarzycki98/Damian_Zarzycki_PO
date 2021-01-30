@@ -59,9 +59,9 @@ public class CzytelnikEdit implements Initializable {
         DbConnect dbConnect = new DbConnect();
         connection = dbConnect.getConnection();
         String query = "UPDATE czytelnik SET Imie='"+czytelnikEditImie.getText()+"'" +
-                ", Nazwisko='"+czytelnikEditNazwisko+"'" +
-                ", Miejscowosc='"+czytelnikEditMiejscowosc+"'" +
-                ", Nr_Telfonu='"+czytelnikEditNr+"' WHERE Id_Czytelnika="+id;
+                ", Nazwisko='"+czytelnikEditNazwisko.getText()+"'" +
+                ", Miejscowosc='"+czytelnikEditMiejscowosc.getText()+"'" +
+                ", Nr_Telefonu='"+czytelnikEditNr.getText()+"' WHERE Id_Czytelnika="+id;
         int ex = connection.createStatement().executeUpdate(query);
 
         if(ex>0){

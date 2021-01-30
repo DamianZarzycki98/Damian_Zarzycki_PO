@@ -46,7 +46,7 @@ public class AutorEdit implements Initializable {
             try {
                 DbConnect dbConnect = new DbConnect();
                 connection = dbConnect.getConnection();
-                String query = "SELECT *,CONCAT(Imie,' ',Nazwisko)as ImNa FROM autor";
+                String query = "SELECT *,CONCAT(Imie,' ',Nazwisko,', rok urodzenia: ',Rok_Urodzenia)as ImNa FROM autor";
                 ResultSet rs = connection.createStatement().executeQuery(query);
                 while (rs.next()) {
                     selectAutor.getItems().add(rs.getString("ImNa"));
