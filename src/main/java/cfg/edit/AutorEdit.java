@@ -94,10 +94,12 @@ public class AutorEdit implements Initializable {
         int ex = connection.createStatement().executeUpdate(query);
 
         if(ex>0){
+            selectAutor.getItems().clear();
             autorEditImie.clear();
             autorEditNazwisko.clear();
             autorEditNarodowosc.clear();
             autorEditRok.clear();
+            selectAutor();
         }
     }
 }
