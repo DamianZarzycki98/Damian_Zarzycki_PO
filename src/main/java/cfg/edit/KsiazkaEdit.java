@@ -1,7 +1,6 @@
 package cfg.edit;
 
 import connect.DbConnect;
-import database.Autor;
 import database.Ksiazka;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,8 +36,6 @@ public class KsiazkaEdit implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //ksiazkaSelectAutor();
-        //ksiazkaSelectWydawnictwo();
         selectKsiazka();
     }
 
@@ -57,23 +54,32 @@ public class KsiazkaEdit implements Initializable {
         }
     }
 
-    public void ksiazkaEdit(ActionEvent actionEvent) {
+    public void ksiazkaEdit(ActionEvent actionEvent) throws SQLException{
+        int idk = (int) listEditKsiazka.get(ksiazkaSelect.getSelectionModel().getSelectedIndex());
+        int ida = (int) listSelectAutor.get(ksiazkaSelectAutor.getSelectionModel().getSelectedIndex());
+        int idw = (int) listSelectWydawnictwo.get(ksiazkaSelectWydawnictwo.getSelectionModel().getSelectedIndex());
+        DbConnect dbConnect = new DbConnect();
+        connection = dbConnect.getConnection();
+        String query = "UPDATE ksiazka SET Tytul ='"+ksiazkaEditTytul.getText()+"'," +
+                "Rok_Wydania='"+ksiazkaEditRok.getText()+"'," +
+                "Id_Autora='"+ida+"'," +
+                "Id_Wydawnictwa='"+idw+"' WHERE Id_Ksiazki="+idk;
+        int ex = connection.createStatement().executeUpdate(query);
 
+        if(ex>0){
+            ksiazkaSelect.getItems().clear();
+            ksiazkaEditRok.clear();
+            ksiazkaEditTytul.clear();
+            ksiazkaSelectAutor.getItems().clear();
+            ksiazkaSelectWydawnictwo.getItems().clear();
+        }
     }
-
-//    public void ksiazka(ActionEvent actionEvent) {
-//    }
-//
-//    private void ksiazkaSelectAutor(){
-//
-//    }
-//
-//    private void ksiazkaSelectWydawnictwo() {
-//    }
 
     public void ksiazka(ActionEvent actionEvent) {
         if (ksiazkaSelect.getValue() != null) {
             try {
+                ksiazkaSelectWydawnictwo.getItems().clear();
+                ksiazkaSelectAutor.getItems().clear();
                 int id = (int) listEditKsiazka.get(ksiazkaSelect.getSelectionModel().getSelectedIndex());
                 DbConnect dbConnect = new DbConnect();
                 connection = dbConnect.getConnection();
@@ -90,10 +96,19 @@ public class KsiazkaEdit implements Initializable {
                 ksiazkaEditRok.setText(k.getRok_Wydania());
                 String query2 = "SELECT * FROM autor";
                 ResultSet rs2 = connection.createStatement().executeQuery(query2);
-                ksiazkaSelectAutor.getItems().addAll(rs2.getString("Imie"));
+                while(rs2.next()){
+                    ksiazkaSelectAutor.getItems().addAll(rs2.getString("Id_Autora"));
+                    listSelectAutor.add(rs2.getInt("Id_Autora"));
+                }
+                ksiazkaSelectAutor.getSelectionModel().select(k.getId_Autora());
+
                 String query3 = "SELECT * FROM wydawnictwo";
                 ResultSet rs3 = connection.createStatement().executeQuery(query3);
-                ksiazkaSelectWydawnictwo.getItems().addAll(rs3.getString("Nazwa_Wydawnictwa"));
+                while(rs3.next()) {
+                    ksiazkaSelectWydawnictwo.getItems().addAll(rs3.getString("Id_Wydawnictwa"));
+                    listSelectWydawnictwo.add(rs3.getInt("Id_Wydawnictwa"));
+                }
+                ksiazkaSelectWydawnictwo.getSelectionModel().select(k.getId_Wydawnictwa());
             } catch (Exception ex) {
 
             }
