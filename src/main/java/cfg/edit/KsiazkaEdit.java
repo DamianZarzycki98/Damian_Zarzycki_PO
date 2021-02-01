@@ -72,6 +72,7 @@ public class KsiazkaEdit implements Initializable {
             ksiazkaEditTytul.clear();
             ksiazkaSelectAutor.getItems().clear();
             ksiazkaSelectWydawnictwo.getItems().clear();
+            selectKsiazka();
         }
     }
 
@@ -97,18 +98,24 @@ public class KsiazkaEdit implements Initializable {
                 String query2 = "SELECT * FROM autor";
                 ResultSet rs2 = connection.createStatement().executeQuery(query2);
                 while(rs2.next()){
-                    ksiazkaSelectAutor.getItems().addAll(rs2.getString("Id_Autora"));
+                    ksiazkaSelectAutor.getItems().addAll(rs2.getString("Imie")+" "+rs2.getString("Nazwisko"));
                     listSelectAutor.add(rs2.getInt("Id_Autora"));
                 }
-                ksiazkaSelectAutor.getSelectionModel().select(k.getId_Autora());
+                ResultSet au = connection.createStatement().executeQuery("SELECT Imie, Nazwisko FROM autor WHERE Id_Autora = " + Integer.valueOf(k.getId_Autora()));
+                while (au.next()) {
+                    ksiazkaSelectAutor.getSelectionModel().select(au.getString(1) + " " + au.getString(2));
+                }
 
                 String query3 = "SELECT * FROM wydawnictwo";
                 ResultSet rs3 = connection.createStatement().executeQuery(query3);
                 while(rs3.next()) {
-                    ksiazkaSelectWydawnictwo.getItems().addAll(rs3.getString("Id_Wydawnictwa"));
+                    ksiazkaSelectWydawnictwo.getItems().addAll(rs3.getString("Nazwa_Wydawnictwa"));
                     listSelectWydawnictwo.add(rs3.getInt("Id_Wydawnictwa"));
                 }
-                ksiazkaSelectWydawnictwo.getSelectionModel().select(k.getId_Wydawnictwa());
+                ResultSet wyd = connection.createStatement().executeQuery("SELECT Nazwa_Wydawnictwa FROM wydawnictwo WHERE Id_Wydawnictwa =" + k.getId_Wydawnictwa());
+                while (wyd.next()) {
+                    ksiazkaSelectWydawnictwo.getSelectionModel().select(wyd.getString(1));
+                }
             } catch (Exception ex) {
 
             }
