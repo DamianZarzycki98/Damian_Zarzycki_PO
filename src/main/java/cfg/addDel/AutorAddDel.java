@@ -72,7 +72,6 @@ public class AutorAddDel implements Initializable {
                 autorSelect.getItems().add(rs.getString("ImNa"));
                 listDelAutor.add(rs.getInt("Id_Autora"));
             }
-            //new AutoCompleteComboBoxListener<>(autorSelect);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

@@ -11,15 +11,16 @@
    <children>
   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
          <children>
-            <TextField fx:id="ksiazkaEditTytul" layoutX="51.0" layoutY="43.0" />
-            <TextField fx:id="ksiazkaEditRok" layoutX="51.0" layoutY="106.0" />
-            <ComboBox fx:id="ksiazkaSelectAutor" layoutX="51.0" layoutY="170.0" prefWidth="150.0" />
-            <ComboBox fx:id="ksiazkaSelectWydawnictwo" layoutX="51.0" layoutY="236.0" prefWidth="150.0" />
-            <Text layoutX="51.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
-            <Text layoutX="53.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania" />
-            <Text layoutX="53.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" />
-            <Text layoutX="53.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wydawnictwo" />
-            <Button layoutX="51.0" layoutY="289.0" mnemonicParsing="false" onAction="#ksiazkaEdit" text="Edytuj" />
+            <TextField fx:id="ksiazkaEditTytul" layoutX="52.0" layoutY="75.0" />
+            <TextField fx:id="ksiazkaEditRok" layoutX="52.0" layoutY="132.0" />
+            <ComboBox fx:id="ksiazkaSelectAutor" layoutX="51.0" layoutY="200.0" prefWidth="150.0" />
+            <ComboBox fx:id="ksiazkaSelectWydawnictwo" layoutX="51.0" layoutY="260.0" prefWidth="150.0" />
+            <Text layoutX="50.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
+            <Text layoutX="52.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania" />
+            <Text layoutX="49.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" />
+            <Text layoutX="49.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wydawnictwo" />
+            <Button layoutX="53.0" layoutY="313.0" mnemonicParsing="false" onAction="#ksiazkaEdit" text="Edytuj" />
+            <ComboBox fx:id="ksiazkaSelect" layoutX="51.0" layoutY="24.0" onAction="#ksiazka" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>

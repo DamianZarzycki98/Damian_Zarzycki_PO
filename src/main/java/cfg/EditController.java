@@ -23,11 +23,6 @@ public class EditController {
         pane.getChildren().setAll(anchorPane);
     }
 
-    public void egzemplarzEdit(ActionEvent actionEvent) throws IOException{
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/edit/egzemplarzEdit.fxml"));
-        pane.getChildren().setAll(anchorPane);
-    }
-
     public void ksiazkaEdit(ActionEvent actionEvent) throws IOException{
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("/FXML/edit/ksiazkaEdit.fxml"));
         pane.getChildren().setAll(anchorPane);

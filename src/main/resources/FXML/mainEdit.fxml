@@ -13,32 +13,27 @@
          <children>
             <Button mnemonicParsing="false" onAction="#autorEdit" prefWidth="200.0" text="Autor">
                <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  <Insets bottom="25.0" left="20.0" right="20.0" top="25.0" />
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#czytelnikEdit" prefWidth="200.0" text="Czytelnik">
                <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#egzemplarzEdit" prefWidth="200.0" text="Egzemplarz">
-               <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  <Insets bottom="25.0" left="20.0" right="20.0" top="25.0" />
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#ksiazkaEdit" prefWidth="200.0" text="Książka">
                <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  <Insets bottom="25.0" left="20.0" right="20.0" top="25.0" />
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#wydawnictwoEdit" prefWidth="200.0" text="Wydawnictwo">
                <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  <Insets bottom="25.0" left="20.0" right="20.0" top="25.0" />
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#wypozyczeniaEdit" prefWidth="200.0" text="Wypożyczenia">
                <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  <Insets bottom="25.0" left="20.0" right="20.0" top="25.0" />
                </VBox.margin>
             </Button>
          </children>
