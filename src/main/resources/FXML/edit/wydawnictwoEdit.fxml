@@ -11,13 +11,14 @@
    <children>
   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
          <children>
-            <TextField fx:id="wydawnictwoEditNazwa" layoutX="51.0" layoutY="47.0" />
-            <TextField fx:id="wydawnictwoEditSiedziba" layoutX="51.0" layoutY="123.0" />
-            <TextField fx:id="wydawnictwoEditEmail" layoutX="51.0" layoutY="198.0" />
-            <Text layoutX="51.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa wydawnictwa" />
-            <Text layoutX="51.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Siedziba główna" />
-            <Text layoutX="51.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
+            <TextField fx:id="wydawnictwoEditNazwa" layoutX="51.0" layoutY="80.0" />
+            <TextField fx:id="wydawnictwoEditSiedziba" layoutX="51.0" layoutY="147.0" />
+            <TextField fx:id="wydawnictwoEditEmail" layoutX="52.0" layoutY="212.0" />
+            <Text layoutX="52.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa wydawnictwa" />
+            <Text layoutX="51.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Siedziba główna" />
+            <Text layoutX="51.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
             <Button layoutX="51.0" layoutY="245.0" mnemonicParsing="false" onAction="#wydawnictwoEdit" text="Edytuj" />
+            <ComboBox fx:id="selectWydawnictwo" layoutX="51.0" layoutY="21.0" onAction="#wydawnictwo" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>
