@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,21 +8,53 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.addDel.WypozyczeniaAddDel">
+<AnchorPane stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.addDel.WypozyczeniaAddDel">
    <children>
-      <TabPane prefHeight="400.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="edit" prefHeight="400.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Dodawanie">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ComboBox fx:id="wypozyczeniaSelectKsiazka" layoutX="50.0" layoutY="50.0" prefWidth="150.0" />
-                        <ComboBox fx:id="wypozyczeniaSelectCzytelnik" layoutX="50.0" layoutY="125.0" prefWidth="150.0" />
-                        <DatePicker fx:id="wypozyczeniaSelectDataOdd" layoutX="47.0" layoutY="194.0" />
-                        <Button layoutX="47.0" layoutY="242.0" mnemonicParsing="false" onAction="#wypozyczeniaAdd" text="Dodaj" />
-                        <Text layoutX="50.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz książkę" />
-                        <Text layoutX="50.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz czytelnika" />
-                        <Text layoutX="50.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data oddania" />
+                        <VBox prefWidth="200.0">
+                           <children>
+                              <Label text="Wybierz książkę">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="wypozyczeniaSelectKsiazka" prefWidth="160.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Label text="Wybierz czytelnika">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="wypozyczeniaSelectCzytelnik" prefWidth="160.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Label text="Data oddania">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <DatePicker fx:id="wypozyczeniaSelectDataOdd" prefWidth="160.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Button mnemonicParsing="false" onAction="#wypozyczeniaAdd" text="Dodaj">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
             </content>
@@ -30,9 +63,25 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ComboBox fx:id="wypozyczeniaSelect" layoutX="50.0" layoutY="49.0" prefWidth="150.0" />
-                        <Text layoutX="50.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz wypozyczenie do usunięcia" />
-                        <Button layoutX="50.0" layoutY="101.0" mnemonicParsing="false" onAction="#wypozyczeniaDel" text="Usuń" />
+                        <VBox prefWidth="200.0">
+                           <children>
+                              <Label text="Wybierz wypozyczenie do usunięcia">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="wypozyczeniaSelect" prefWidth="160.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Button mnemonicParsing="false" onAction="#wypozyczeniaDel" text="Usuń">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children></AnchorPane>
             </content>
           </Tab>

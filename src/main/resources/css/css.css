@@ -1,0 +1,59 @@
+#edit {
+    -fx-background-color: #1d1d1d;
+    -fx-border-color: black;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-wrap-text: true;
+}
+
+#gorne {
+    -fx-background-color: #3c3c3c;
+    -fx-border-color: black;
+}
+
+#dolne {
+    -fx-border-style: hidden solid solid solid;
+    -fx-border-color: black;
+    -fx-background-color: #1d1d1d;
+}
+
+#wyswietl {
+    -fx-background-image: url("img/background.jpg");
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: 1200px 401px;
+}
+
+#guziczki {
+    -fx-background-color: #3c3c3c;
+}
+
+#pane {
+    -fx-background-color: #1d1d1d;
+}
+
+.table-view .column-header-background .label{
+    -fx-text-fill: black;
+}
+
+.table-view .scroll-bar:horizontal *{
+    -fx-min-width: 0;
+    -fx-pref-width: 0;
+    -fx-max-width: 0;
+
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+.table-row-cell{
+    -fx-background-color: #3c3c3c;
+}
+.table-row-cell:odd{
+    -fx-background-color: #1d1d1d;
+}

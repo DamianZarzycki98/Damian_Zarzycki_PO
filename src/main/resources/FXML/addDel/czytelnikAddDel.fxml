@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,23 +8,63 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.addDel.CzytelnikAddDel">
+<AnchorPane stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.addDel.CzytelnikAddDel">
    <children>
-      <TabPane prefHeight="400.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="edit" prefHeight="400.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Dodawanie">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField fx:id="czytelnikAddImie" layoutX="51.0" layoutY="49.0" />
-                        <Text layoutX="51.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />
-                        <Text layoutX="51.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
-                        <TextField fx:id="czytelnikAddNazwisko" layoutX="51.0" layoutY="112.0" />
-                        <Text layoutX="51.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miejscowość" />
-                        <TextField fx:id="czytelnikAddMiejscowosc" layoutX="51.0" layoutY="172.0" />
-                        <Text layoutX="51.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer telefonu" />
-                        <TextField fx:id="czytelnikAddNr" layoutX="51.0" layoutY="228.0" />
-                        <Button layoutX="50.0" layoutY="272.0" mnemonicParsing="false" onAction="#czytelnikAdd" text="Dodaj" />
+                        <VBox prefWidth="200.0">
+                           <children>
+                              <Label text="Imie">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="czytelnikAddImie">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Nazwisko">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="czytelnikAddNazwisko">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Miejscowość">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="czytelnikAddMiejscowosc">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Numer telefonu">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="czytelnikAddNr">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#czytelnikAdd" text="Dodaj">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
             </content>
@@ -32,9 +73,25 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ComboBox fx:id="czytelnikSelect" layoutX="50.0" layoutY="55.0" prefWidth="150.0" />
-                        <Button layoutX="50.0" layoutY="98.0" mnemonicParsing="false" onAction="#czytelnikDel" text="Usuń" />
-                        <Text layoutX="50.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz czytelnika do usunięcia" />
+                        <VBox prefWidth="200.0">
+                           <children>
+                              <Label text="Wybierz czytelnika do usunięcia">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="czytelnikSelect" prefWidth="160.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Button mnemonicParsing="false" onAction="#czytelnikDel" text="Usuń">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children></AnchorPane>
             </content>
           </Tab>

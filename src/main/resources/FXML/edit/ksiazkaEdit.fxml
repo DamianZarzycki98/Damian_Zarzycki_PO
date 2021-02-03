@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,19 +10,49 @@
 
 <AnchorPane stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.KsiazkaEdit">
    <children>
-  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
+      <VBox fx:id="edit" prefHeight="400.0" prefWidth="220.0">
          <children>
-            <TextField fx:id="ksiazkaEditTytul" layoutX="52.0" layoutY="75.0" />
-            <TextField fx:id="ksiazkaEditRok" layoutX="52.0" layoutY="132.0" />
-            <ComboBox fx:id="ksiazkaSelectAutor" layoutX="51.0" layoutY="200.0" prefWidth="150.0" />
-            <ComboBox fx:id="ksiazkaSelectWydawnictwo" layoutX="51.0" layoutY="260.0" prefWidth="150.0" />
-            <Text layoutX="50.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tytuł" />
-            <Text layoutX="52.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rok wydania" />
-            <Text layoutX="49.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" />
-            <Text layoutX="49.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wydawnictwo" />
-            <Button layoutX="53.0" layoutY="313.0" mnemonicParsing="false" onAction="#ksiazkaEdit" text="Edytuj" />
-            <ComboBox fx:id="ksiazkaSelect" layoutX="51.0" layoutY="24.0" onAction="#ksiazka" prefWidth="150.0" />
+            <ComboBox fx:id="ksiazkaSelect" onAction="#ksiazka" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin></ComboBox>
+            <Label text="Tytuł">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="ksiazkaEditTytul">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Label text="Rok wydania">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="ksiazkaEditRok">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Label text="Autor">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <ComboBox fx:id="ksiazkaSelectAutor" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></ComboBox>
+            <Label text="Wydawnictwo">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <ComboBox fx:id="ksiazkaSelectWydawnictwo" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></ComboBox>
+            <Button mnemonicParsing="false" onAction="#ksiazkaEdit" text="Edytuj">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Button>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,17 +10,41 @@
 
 <AnchorPane stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.WydawnictwoEdit">
    <children>
-  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
+      <VBox fx:id="edit" prefHeight="400.0" prefWidth="220.0">
          <children>
-            <TextField fx:id="wydawnictwoEditNazwa" layoutX="51.0" layoutY="80.0" />
-            <TextField fx:id="wydawnictwoEditSiedziba" layoutX="51.0" layoutY="147.0" />
-            <TextField fx:id="wydawnictwoEditEmail" layoutX="52.0" layoutY="212.0" />
-            <Text layoutX="52.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa wydawnictwa" />
-            <Text layoutX="51.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Siedziba główna" />
-            <Text layoutX="51.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
-            <Button layoutX="51.0" layoutY="245.0" mnemonicParsing="false" onAction="#wydawnictwoEdit" text="Edytuj" />
-            <ComboBox fx:id="selectWydawnictwo" layoutX="51.0" layoutY="21.0" onAction="#wydawnictwo" prefWidth="150.0" />
+            <ComboBox fx:id="selectWydawnictwo" onAction="#wydawnictwo" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin></ComboBox>
+            <Label text="Nazwa wydawnictwa">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="wydawnictwoEditNazwa">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Label text="Siedziba główna">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="wydawnictwoEditSiedziba">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Label text="E-mail">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="wydawnictwoEditEmail">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Button mnemonicParsing="false" onAction="#wydawnictwoEdit" text="Edytuj">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Button>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
 </AnchorPane>

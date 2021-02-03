@@ -8,23 +8,63 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.addDel.AutorAddDel">
+<AnchorPane xmlns="http://javafx.com/javafx/8" stylesheets="@../../css/css.css" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.addDel.AutorAddDel">
    <children>
-      <TabPane prefHeight="400.0" prefWidth="450.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="edit" prefHeight="400.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Dodawanie">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <TextField fx:id="autorAddImie" layoutX="41.0" layoutY="50.0" />
-                        <TextField fx:id="autorAddNazwisko" layoutX="41.0" layoutY="105.0" />
-                        <TextField fx:id="autorAddRok" layoutX="41.0" layoutY="161.0" />
-                        <TextField fx:id="autorAddNarodowosc" layoutX="41.0" layoutY="213.0" />
-                        <Button layoutX="42.0" layoutY="267.0" mnemonicParsing="false" onAction="#autorAdd" text="Dodaj" />
-                        <Text layoutX="42.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />
-                        <Text layoutX="41.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
-                        <Text layoutX="42.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rok urodzenia" />
-                        <Text layoutX="41.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Narodowość" />
+                        <VBox prefWidth="200.0">
+                           <children>
+                              <Label text="Imie">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="autorAddImie">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Nazwisko">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="autorAddNazwisko">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Rok urodzenia">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="autorAddRok">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Label text="Narodowość">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="autorAddNarodowosc">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button mnemonicParsing="false" onAction="#autorAdd" text="Dodaj">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
             </content>
@@ -33,9 +73,25 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ComboBox fx:id="autorSelect" layoutX="39.0" layoutY="50.0" prefWidth="150.0" />
-                        <Button layoutX="39.0" layoutY="97.0" mnemonicParsing="false" onAction="#autorDel" text="Usuń" />
-                        <Text layoutX="39.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz autora do usunięcia" />
+                        <VBox prefWidth="200.0">
+                           <children>
+                              <Label text="Wybierz autora do usunięcia">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="15.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="autorSelect" prefWidth="180.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <Button mnemonicParsing="false" onAction="#autorDel" text="Usuń">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
                      </children></AnchorPane>
             </content>
           </Tab>

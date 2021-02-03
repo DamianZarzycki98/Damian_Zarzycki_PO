@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="510.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.MainController">
+<AnchorPane prefHeight="510.0" prefWidth="1200.0" stylesheets="@../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.MainController">
     <children>
-        <HBox prefHeight="45.0" prefWidth="1200.0">
+        <HBox fx:id="gorne" prefHeight="45.0" prefWidth="1200.0">
             <children>
                 <Button mnemonicParsing="false" onAction="#autorTable" prefWidth="150.0" text="Autor">
                     <HBox.margin>
@@ -43,7 +43,7 @@
                 </Button>
             </children>
         </HBox>
-      <HBox layoutY="65.0" prefHeight="45.0" prefWidth="1200.0">
+      <HBox fx:id="dolne" layoutY="65.0" prefHeight="45.0" prefWidth="1200.0">
          <children>
             <Button mnemonicParsing="false" onAction="#adddel" prefWidth="150.0" text="Dodaj/Usuń">
                <HBox.margin>
@@ -57,6 +57,6 @@
             </Button>
          </children>
       </HBox>
-        <Pane fx:id="wyswietl" layoutY="110.0" prefHeight="305.0" prefWidth="1200.0" />
+        <Pane fx:id="wyswietl" layoutY="110.0" prefHeight="401.0" prefWidth="1200.0" />
     </children>
 </AnchorPane>

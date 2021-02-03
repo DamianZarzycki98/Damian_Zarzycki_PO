@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,15 +10,33 @@
 
 <AnchorPane stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.WypozyczeniaEdit">
    <children>
-  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
+      <VBox fx:id="edit" prefHeight="400.0" prefWidth="220.0">
          <children>
-            <ComboBox fx:id="wypozyczeniaSelectKsiazka" layoutX="50.0" layoutY="110.0" prefWidth="150.0" />
-            <DatePicker fx:id="wypozyczeniaSelectDataOdd" layoutX="50.0" layoutY="171.0" />
-            <Button layoutX="50.0" layoutY="219.0" mnemonicParsing="false" onAction="#wypozyczeniaEdit" text="Edytuj" />
-            <Text layoutX="47.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz książkę" />
-            <Text layoutX="53.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data oddania" />
-            <ComboBox fx:id="selectWypozyczenia" layoutX="50.0" layoutY="31.0" onAction="#wypozyczenia" prefWidth="150.0" />
+            <ComboBox fx:id="selectWypozyczenia" onAction="#wypozyczenia" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin></ComboBox>
+            <Label text="Wybierz książkę">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <ComboBox fx:id="wypozyczeniaSelectKsiazka" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></ComboBox>
+            <Label text="Data oddania">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <DatePicker fx:id="wypozyczeniaSelectDataOdd" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></DatePicker>
+            <Button mnemonicParsing="false" onAction="#wypozyczeniaEdit" text="Edytuj">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Button>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
 </AnchorPane>

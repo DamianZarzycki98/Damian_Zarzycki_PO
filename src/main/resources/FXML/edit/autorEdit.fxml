@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,21 +9,51 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.AutorEdit">
+<AnchorPane prefHeight="400.0" prefWidth="220.0" stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.AutorEdit">
    <children>
-  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
+      <VBox fx:id="edit" prefHeight="400.0" prefWidth="220.0">
          <children>
-            <TextField fx:id="autorEditImie" layoutX="41.0" layoutY="76.0" />
-            <TextField fx:id="autorEditNazwisko" layoutX="41.0" layoutY="130.0" />
-            <TextField fx:id="autorEditRok" layoutX="41.0" layoutY="188.0" />
-            <TextField fx:id="autorEditNarodowosc" layoutX="41.0" layoutY="241.0" />
-            <Button layoutX="40.0" layoutY="292.0" mnemonicParsing="false" onAction="#autorEdit" text="Edytuj" />
-            <Text layoutX="39.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />
-            <Text layoutX="39.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwisko" />
-            <Text layoutX="41.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rok urodzenia" />
-            <Text layoutX="40.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Narodowość" />
-            <ComboBox fx:id="selectAutor" layoutX="41.0" layoutY="23.0" onAction="#Autor" prefWidth="150.0" />
+            <ComboBox fx:id="selectAutor" onAction="#Autor" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin></ComboBox>
+            <Label text="Imie">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="autorEditImie">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Label text="Nazwisko">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="autorEditNazwisko">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Label text="Rok urodzenia">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="autorEditRok">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Label text="Narodowość">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Label>
+            <TextField fx:id="autorEditNarodowosc">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></TextField>
+            <Button mnemonicParsing="false" onAction="#autorEdit" text="Edytuj">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+               </VBox.margin></Button>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
 </AnchorPane>
