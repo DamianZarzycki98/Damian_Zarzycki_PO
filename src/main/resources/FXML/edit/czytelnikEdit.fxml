@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.CzytelnikEdit">
+<AnchorPane stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.CzytelnikEdit">
    <children>
-  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0" style="-fx-border-color: black;">
+  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
          <children>
             <TextField fx:id="czytelnikEditImie" layoutX="51.0" layoutY="79.0" />
             <Text layoutX="51.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imie" />

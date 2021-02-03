@@ -7,17 +7,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.WypozyczeniaEdit">
+<AnchorPane stylesheets="@../../css/css.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cfg.edit.WypozyczeniaEdit">
    <children>
   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="450.0">
          <children>
-            <ComboBox fx:id="wypozyczeniaSelectKsiazka" layoutX="50.0" layoutY="50.0" prefWidth="150.0" />
-            <ComboBox fx:id="wypozyczeniaSelectCzytelnik" layoutX="50.0" layoutY="125.0" prefWidth="150.0" />
-            <DatePicker fx:id="wypozyczeniaSelectDataOdd" layoutX="47.0" layoutY="194.0" />
-            <Button layoutX="47.0" layoutY="242.0" mnemonicParsing="false" onAction="#wypozyczeniaEdit" text="Edytuj" />
-            <Text layoutX="50.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz książkę" />
-            <Text layoutX="50.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz czytelnika" />
-            <Text layoutX="50.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data oddania" />
+            <ComboBox fx:id="wypozyczeniaSelectKsiazka" layoutX="50.0" layoutY="110.0" prefWidth="150.0" />
+            <DatePicker fx:id="wypozyczeniaSelectDataOdd" layoutX="50.0" layoutY="171.0" />
+            <Button layoutX="50.0" layoutY="219.0" mnemonicParsing="false" onAction="#wypozyczeniaEdit" text="Edytuj" />
+            <Text layoutX="47.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz książkę" />
+            <Text layoutX="53.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data oddania" />
+            <ComboBox fx:id="selectWypozyczenia" layoutX="50.0" layoutY="31.0" onAction="#wypozyczenia" prefWidth="150.0" />
          </children>
       </AnchorPane>
    </children>
